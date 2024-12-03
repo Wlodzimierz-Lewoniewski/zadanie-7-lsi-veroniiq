@@ -70,7 +70,7 @@ def lsi_similarity(documents, query, k):
     for j in range(C_k.shape[1]):
         doc_vector = C_k[:, j]
         cosine_sim = np.dot(q_k, doc_vector) / (np.linalg.norm(q_k) * np.linalg.norm(doc_vector))
-        similarities.append(round(cosine_sim, 2))
+        similarities.append(round(float(cosine_sim), 2))  # Konwersja na typ float
 
     return similarities
 
